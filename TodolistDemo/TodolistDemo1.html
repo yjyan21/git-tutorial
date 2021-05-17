@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodolistDemo-1</title>
+    <link rel="stylesheet" href="./fa/css/all.min.css">
+    <style type="text/css">
+        * { margin:0;padding:0;}
+        ul,li { list-style: none;}
+        #box { width:350px;height:600px;border:1px solid green;margin:10px auto 0;position:relative;}
+        /* top section start */
+        .info { width:350px;height:150px;background-image:url('img/m1.jpg');background-position:25% 75%;
+            background-size:100%;border-top-left-radius:20px;border-top-right-radius:20px;position:relative;color:white;}
+        .btn_refresh { width:80px;height:30px;position:absolute;top:10px;right:10px;}
+        .date { width:200px;height:30px;position:absolute;bottom:0;left:10px;}
+         /* center section start */
+         ul.items { width:340px;height:auto;overflow:hidden;margin:0 5px;}
+         li.todoitem { width:340px;height:35px;line-height:35px;border-bottom:1px solid silver;color:grey;}
+         .fa-check-circle { float:left;width:25px;height:35px;line-height:35px;margin-left:5px;}
+         .item_name { width:285px;float:left;}
+         .fa-trash-alt { width:25px;line-height:35px;float:left;}
+         /* bottom section start */
+         .add { width:334px;height:48px;line-height:48px;padding:0 8px;position:absolute;bottom:10px;}
+         .fa-plus-circle { font-size:20px;line-height:48px;}
+         .input_box { width:300px;height:35px;border:1px solid gray;border-radius:5px;}
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="info">
+            <div class="btn_refresh">Refresh</div>
+            <div class="date">Mon, May 17, 2021</div>
+        </div>
+        
+            <ul class="items">
+                <li class="todoitem">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="item_name">Complete a project</div>
+                    <i class="far fa-trash-alt"></i>
+                </li>
+                <li class="todoitem">
+                    <i class="far fa-check-circle"></i>
+                    <div class="item_name">Complete a project</div>
+                    <i class="far fa-trash-alt"></i>
+                </li>
+                <li class="todoitem">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="item_name">Complete a project</div>
+                    <i class="far fa-trash-alt"></i>
+                </li>
+                <li class="todoitem">
+                    <i class="far fa-check-circle"></i>
+                    <div class="item_name">Complete a project</div>
+                    <i class="far fa-trash-alt"></i>
+                </li>
+                <li class="todoitem">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="item_name">Complete a project</div>
+                    <i class="far fa-trash-alt"></i>
+                </li>
+                <li class="todoitem">
+                    <i class="far fa-check-circle"></i>
+                    <div class="item_name">Complete a project</div>
+                    <i class="far fa-trash-alt"></i>
+                </li>
+            </ul>
+        
+        <div class="add">
+            <i class="fas fa-plus-circle"></i>
+            <input class="input_box" type="text" value="">
+        </div>
+    </div>
+</body>
+</html>
