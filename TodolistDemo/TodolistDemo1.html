@@ -28,39 +28,34 @@
     </style>
     <script type="text/javascript">
     window.onload = function() {
-	           //计时器 1000秒
-				setInterval(function() {
-					var date = new Date();
-					var year = date.getFullYear(); //获取当前年份   
-					var mon = date.getMonth() + 1; //获取当前月份   
-					var da = date.getDate(); //获取当前日   
-					var day = date.getDay(); //获取当前星期几   
-					var h = date.getHours(); //获取小时   
-					var m = date.getMinutes(); //获取分钟   
-					var s = date.getSeconds(); //获取秒   
-					var d = document.getElementsByClassName("date")[0];
-                   //判断当数字小于等于9时 显示 01 02 ----- 08 09
-					if (mon >= 1 && mon <= 9) {
-						mon = "0" + mon;
-					}
-					if (da >= 0 && da <= 9) {
-						da = "0" + da;
-					}
-					if (h >= 0 && h <= 9) {
-						h = "0" + h;
-					}
+        var date = document.getElementsByClassName("date")[0]; //don't forget[0]
+        var d = new Date();
+        var year = d.getFullYear();
+        var mon = d.getMonth() + 1; //don't forget +1
+        var day = d.getDate();
+        date.innerHTML = mon +"-" + day +"-" + year;
 
-					if (m >= 0 && m <= 9) {
-						m = "0" + m;
-					}
-
-					if (s >= 0 && s <= 9) {
-						s = "0" + s;
-					}
-					d.innerHTML = mon + '-' + da + '-' + year + ' ' + h + ':' + m + ':' + s;
-
-				}, 1000)
-			}
+        var add = document.getElementsByClassName("fa-plus-circle")[0];
+        add.onclick = function(){
+            
+            var addhtml = document.getElementsByClassName("input_box")[0].value;
+            var li = document.createElement("li");
+            li.className = "todoitem";
+            var li_icon = document.createElement("i");
+            li_icon.className = "far fa-check-circle";
+            li.appendChild(li_icon);
+            var li_item = document.createElement("div");
+            li_item.className = "item_name";
+            li_item.innerHTML = addhtml;
+            li.appendChild(li_item);
+            var li_del = document.createElement("i");
+            li_del.className = "far fa-trash-alt";
+            //alert(li);
+            li.appendChild(li_del);
+            var items = document.getElementsByClassName("items")[0];
+            items.appendChild(li);
+        }
+    }
     </script>
 </head>
 <body>
@@ -105,7 +100,7 @@
         
         <div class="add">
             <i class="fas fa-plus-circle"></i>
-            <input class="input_box" type="text" value="">
+            <input class="input_box" type="text" value="aaa">
         </div>
     </div>
 </body>
