@@ -16,47 +16,21 @@
         .btn_refresh { width:80px;height:30px;position:absolute;top:10px;right:10px;}
         .date { width:200px;height:30px;position:absolute;bottom:0;left:10px;}
          /* center section start */
-         ul.items { width:340px;height:auto;overflow:hidden;margin:0 5px;}
-         li.todoitem { width:340px;height:35px;line-height:35px;border-bottom:1px solid silver;color:grey;}
+         ul.items { width:340px;height:400px;overflow:hidden;margin:0 5px;}
+         li.todoitem { width:340px;height:35px;line-height:35px;border-bottom:1px solid silver;color:grey;
+           }
+         li.todoitem_finish { width:340px;height:35px;line-height:35px;border-bottom:1px solid silver;color:grey;
+           }
+           li.todoitem_finish :first-child { color:rgb(96, 226, 128);}
          .fa-check-circle { float:left;width:25px;height:35px;line-height:35px;margin-left:5px;}
-         .item_name { width:285px;float:left;}
+         .item_name { width:285px;float:left; white-space:nowrap;overflow:hidden;text-overflow: ellipsis;}
          .fa-trash-alt { width:25px;line-height:35px;float:left;}
          /* bottom section start */
          .add { width:334px;height:48px;line-height:48px;padding:0 8px;position:absolute;bottom:10px;}
          .fa-plus-circle { font-size:20px;line-height:48px;color:cornflowerblue;}
-         .input_box { width:300px;height:35px;border:1px solid gray;border-radius:5px;}
+         .input_box { width:296px;height:35px;padding-left:4px;border:1px solid gray;border-radius:5px;}
     </style>
-    <script type="text/javascript">
-    window.onload = function() {
-        var date = document.getElementsByClassName("date")[0]; //don't forget[0]
-        var d = new Date();
-        var year = d.getFullYear();
-        var mon = d.getMonth() + 1; //don't forget +1
-        var day = d.getDate();
-        date.innerHTML = mon +"-" + day +"-" + year;
-
-        var add = document.getElementsByClassName("fa-plus-circle")[0];
-        add.onclick = function(){
-            
-            var addhtml = document.getElementsByClassName("input_box")[0].value;
-            var li = document.createElement("li");
-            li.className = "todoitem";
-            var li_icon = document.createElement("i");
-            li_icon.className = "far fa-check-circle";
-            li.appendChild(li_icon);
-            var li_item = document.createElement("div");
-            li_item.className = "item_name";
-            li_item.innerHTML = addhtml;
-            li.appendChild(li_item);
-            var li_del = document.createElement("i");
-            li_del.className = "far fa-trash-alt";
-            //alert(li);
-            li.appendChild(li_del);
-            var items = document.getElementsByClassName("items")[0];
-            items.appendChild(li);
-        }
-    }
-    </script>
+    <script type="text/javascript" src="./todolistjs.js"></script>
 </head>
 <body>
     <div id="box">
@@ -64,43 +38,24 @@
             <div class="btn_refresh">Refresh</div>
             <div class="date"></div>
         </div>
-        
             <ul class="items">
-                <li class="todoitem">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="item_name">Complete a project</div>
-                    <i class="far fa-trash-alt"></i>
-                </li>
-                <li class="todoitem">
+                <!-- <li class="todoitem">
                     <i class="far fa-check-circle"></i>
                     <div class="item_name">Complete a project</div>
                     <i class="far fa-trash-alt"></i>
-                </li>
+                </li> -->
                 <li class="todoitem">
                     <i class="fas fa-check-circle"></i>
-                    <div class="item_name">Complete a project</div>
-                    <i class="far fa-trash-alt"></i>
-                </li>
-                <li class="todoitem">
-                    <i class="far fa-check-circle"></i>
-                    <div class="item_name">Complete a project</div>
-                    <i class="far fa-trash-alt"></i>
-                </li>
-                <li class="todoitem">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="item_name">Complete a project</div>
-                    <i class="far fa-trash-alt"></i>
-                </li>
-                <li class="todoitem">
-                    <i class="far fa-check-circle"></i>
                     <div class="item_name">Complete a project</div>
                     <i class="far fa-trash-alt"></i>
                 </li>
             </ul>
-        
         <div class="add">
             <i class="fas fa-plus-circle"></i>
-            <input class="input_box" type="text" value="aaa">
+            <input class="input_box" type="text" value = "Please enter ..." 
+            onfocus="if(value=='Please enter ...') {value = ''}"
+            onblur = "if(value==''){value = 'Please enter ...'}">
+            <!-- it works until I enter the script by myself,it's weird -->
         </div>
     </div>
 </body>
