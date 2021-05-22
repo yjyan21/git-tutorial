@@ -9,6 +9,7 @@
     <style type="text/css">
         * { margin:0;padding:0;}
         ul,li { list-style: none;}
+        a { text-decoration: none;color:white;}
         #box { width:350px;height:600px;border:1px solid green;margin:10px auto 0;position:relative;}
         /* top section start */
         .info { width:350px;height:150px;background-image:url('img/m1.jpg');background-position:25% 75%;
@@ -16,7 +17,7 @@
         .btn_refresh { width:80px;height:30px;position:absolute;top:10px;right:10px;}
         .date { width:200px;height:30px;position:absolute;bottom:0;left:10px;}
          /* center section start */
-         ul.items { width:340px;height:400px;overflow:hidden;margin:0 5px;}
+         ul.items { width:340px;height:400px;overflow-y:auto;overflow-x:hidden;margin:0 5px;}
          li.todoitem { width:340px;height:35px;line-height:35px;border-bottom:1px solid silver;color:grey;
            }
          li.todoitem_finish { width:340px;height:35px;line-height:35px;border-bottom:1px solid silver;color:grey;
@@ -25,6 +26,20 @@
          .fa-check-circle { float:left;width:25px;height:35px;line-height:35px;margin-left:5px;}
          .item_name { width:285px;float:left; white-space:nowrap;overflow:hidden;text-overflow: ellipsis;}
          .fa-trash-alt { width:25px;line-height:35px;float:left;}
+         /* 自定义滚动条样式 */
+         /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/
+        ::-webkit-scrollbar{ width:6px; height:16px; background-color:#F5F5F5; }
+        /*定义滚动条轨道
+        内阴影+圆角*/
+        ::-webkit-scrollbar-track
+        { /* -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3); */ 
+            border-radius:10px;background-color:#F5F5F5;}
+        /*定义滑块
+        内阴影+圆角*/
+        ::-webkit-scrollbar-thumb
+        {border-radius:10px;
+            /* -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3); */
+            background-color:rgb(208, 224, 241); }
          /* bottom section start */
          .add { width:334px;height:48px;line-height:48px;padding:0 8px;position:absolute;bottom:10px;}
          .fa-plus-circle { font-size:20px;line-height:48px;color:cornflowerblue;}
@@ -35,7 +50,7 @@
 <body>
     <div id="box">
         <div class="info">
-            <div class="btn_refresh">Refresh</div>
+            <div class="btn_refresh"><a href='#' title='clean all of data'>Refresh</a></div>
             <div class="date"></div>
         </div>
             <ul class="items">
@@ -44,11 +59,11 @@
                     <div class="item_name">Complete a project</div>
                     <i class="far fa-trash-alt"></i>
                 </li> -->
-                <li class="todoitem">
+                <!-- <li class="todoitem">
                     <i class="fas fa-check-circle"></i>
                     <div class="item_name">Complete a project</div>
                     <i class="far fa-trash-alt"></i>
-                </li>
+                </li> -->
             </ul>
         <div class="add">
             <i class="fas fa-plus-circle"></i>
