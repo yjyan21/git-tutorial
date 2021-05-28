@@ -1,8 +1,34 @@
-* { padding:0;margin:0;font-family: 'Times New Roman', Times, serif;}
-body { background-color:deepskyblue;}
-.select-box { width:260px;height:150px;padding:20px;margin:280px auto 0;background-color:white;border-radius:20px;}
+* { padding:0;margin:0;font-family:"Poppins",sans-serif;list-style:none;}
+body { background-color:lightskyblue;}
+/* select-box section */
+.select-box { width:260px;height:200px;padding:20px;margin:230px auto 0;background-color:white;border-radius:20px;
+   }
+.select-box.hidden { display:none;}
 .select-box header { font-size:20px;font-weight:600;border-bottom:1px solid rgb(218, 216, 216);padding-top:10px;}
 .content { padding:15px 0;}
 .content .title { font-size:18px;padding-bottom:10px;}
 .options { padding-top:10px;}
-.options button { width:120px;height:35px;background-color:thistle;border:none;outline:none;border-radius:5px;}
+.options button { width:120px;height:40px;line-height:40px;font-size:16px;color:white;
+    background-color:rgb(123, 188, 228);padding:0;margin:0;
+    border:none;outline:none;border-radius:5px; cursor:pointer; transition: all 1s ease;}
+.options button.playerX:hover { background-color:rgb(115, 143, 204);}
+.options button.playerO:hover { background-color:rgb(115, 143, 204);}
+/* play-box section */
+.play-box { width:260px;height:200px;padding:20px;margin:230px auto 0;border-radius:20px;
+    opacity: 0;transition: opacity 0.5s linear;}
+.play-box.show { display:block;opacity:1;}
+ul.play-top { width:260px;height:40px;padding:5px;display:flex;background-color:white;border-radius: 5px;
+   margin-bottom:5px;}
+.play-top-li { width:100px;line-height:40px;font-size:16px;font-weight:600;color:black;border-radius:5px;
+    text-align:center;cursor:pointer;flex-grow:1;}
+li.active { background-color:lightskyblue;}
+.play-board { width:270px;height:auto;}
+.play-board section { width:270px;display:flex;justify-content:space-between;}
+.play-board section div { width:75px;height:75px;line-height:75px;text-align:center;border-radius:5px;
+        font-size:30px;font-weight:600;background-color:white;margin:5px;color:lightskyblue;cursor:pointer;}
+ /* result-box section */
+ .result-box { width:260px;height:200px;padding:20px;margin:230px auto 0;background-color:white;border-radius:20px;
+    display:none;}
+.result-notice { width:260px;line-height:30px;font-size:30px;}
+.result-box button { width:90px;height:40px;font-size:20px;background-color:lightskyblue;margin-top:40px;
+    border:none;border-radius:5px;cursor:pointer;}
